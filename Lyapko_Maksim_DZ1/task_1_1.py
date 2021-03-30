@@ -35,6 +35,3 @@ else:
     duration.append(second)
     duration.append("сек")
 print(duration)
-
-
-
