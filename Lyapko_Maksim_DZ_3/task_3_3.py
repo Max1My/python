@@ -1,6 +1,12 @@
 def thesaurus(keys,names):
     dict_of_name = {}
-    dict_of_name[keys] = names
+    n = len(keys)
+    while n > 0:
+        y = keys.pop()
+        y = ''.join(y)
+        z = names.pop()
+        dict_of_name.setdefault(y,z)
+        n -= 1
     print(dict_of_name)
 
 def Split(name):
@@ -12,12 +18,9 @@ def SplitKeyWords(key):
     for i in key:
         i = ''.join(i)
         l.append(i[0])
-        print(i)
     return l
 A_name = input('')
 SplitName = Split(A_name)
 Names = ','.join(SplitName)
 Keywords = SplitKeyWords(SplitName)
-Keys = ','.join(Keywords)
-thesaurus(Keys,Names)
-print(Keywords,SplitName)
+thesaurus(Keywords,SplitName)
